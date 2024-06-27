@@ -18,8 +18,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState(){ 
     super.initState();
-    Timer(const Duration(seconds: 5), () {
-      Navigator.popAndPushNamed(context, RouteManager.loginPage);
+    Timer(const Duration(seconds: 4), () {
+      Navigator.popAndPushNamed(context, RouteManager.sessionPage);
     });
     _controller = AnimationController(vsync: this);
   }

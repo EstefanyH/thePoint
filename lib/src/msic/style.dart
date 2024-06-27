@@ -92,6 +92,12 @@ const TextStyle style16White = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.w200);
 
+const TextStyle style14White = TextStyle(
+  fontFamily: "Montserrat",
+  fontSize: 14,
+  color: Colors.white,
+  fontWeight: FontWeight.w200);
+
 const TextStyle style16Black = TextStyle(
   fontFamily: "Montserrat",
   fontSize: 16,

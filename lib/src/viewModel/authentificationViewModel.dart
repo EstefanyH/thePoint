@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thepointapp/src/views/page/sessionPage.dart';
 
-import '../views/page/loginPage.dart';
-
-class UserViewModel extends State<LoginPage> {
+class AuthentificationViewModel extends State<SessionPage> {
   
   @override
   void initState(){
