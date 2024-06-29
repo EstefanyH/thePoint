@@ -1,22 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thepointapp/src/network/loginService.dart';
+import 'package:thepointapp/src/network/sessionService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
+import 'package:thepointapp/src/util/firebaseOptions.dart';
 
 void main() async {
-  /*
-  // Set up the SettingsController, which will glue user settings to multiple
-  // Flutter Widgets.
-  final settingsController = SettingsController(SettingsService());
-
-  // Load the user's preferred theme while the splash screen is displayed.
-  // This prevents a sudden theme change when the app is first displayed.
-  await settingsController.loadSettings();
-
-  // Run the app and pass in the SettingsController. The app listens to the
-  // SettingsController for changes, then passes it further down to the
-  // SettingsView.
-  runApp(MyApp(settingsController: settingsController)); */
+ 
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform);
   runApp(MyApp());
 }
 
@@ -31,6 +25,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+    
     WidgetsBinding.instance.addObserver(this);
   }
  
@@ -40,11 +35,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
  
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => SessionService()),
         ChangeNotifierProvider(create: (context) => LoginService()),
-        //ChangeNotifierProvider(create: (context) => AccountService()),
         //ChangeNotifierProvider(create: (context) => ChatService()),
       ],
-      child: MaterialApp( 
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RouteManager.onGenerationRoute,
         initialRoute: RouteManager.loadingPage,
