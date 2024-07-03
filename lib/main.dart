@@ -1,4 +1,4 @@
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thepointapp/src/network/loginService.dart';
@@ -9,10 +9,10 @@ import 'package:thepointapp/src/util/firebaseOptions.dart';
 void main() async {
  
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+  /*await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform);
 
-  /*await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: const FirebaseOptions(
           apiKey: "AIzaSyD3wST55DRDTD2Dmj8rvrlwnmnMR7EOZHU",
           appId:  "1:848613056189:web:9d18e75518499b79aa61d4",

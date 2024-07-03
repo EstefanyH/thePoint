@@ -1,4 +1,4 @@
-import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
+/*import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
@@ -74,4 +74,4 @@ class DefaultFirebaseOptions {
         '406099696497-taeapvle10rf355ljcvq5dt134mkghmp.apps.googleusercontent.com',
     iosBundleId: 'io.flutter.plugins.firebase.tests',
   );
-}
+}*/

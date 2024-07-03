@@ -21,11 +21,11 @@ class AuthentificationViewModel extends State<SessionPage> {
 
   void signInWithGoogle () async {
     try {
-      var result = await sessionManager.authWithGoogle();      
+      /*var result = await sessionManager.authWithGoogle();      
       if (result!.user?.displayName != null)
       {
         Navigator.popAndPushNamed(context, RouteManager.loginPage);
-      }
+      }*/
     } catch(e) {
       print(e.toString());
     }
