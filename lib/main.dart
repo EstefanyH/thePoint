@@ -11,6 +11,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform);
+
+  /*await Firebase.initializeApp(
+    options: const FirebaseOptions(
+          apiKey: "AIzaSyD3wST55DRDTD2Dmj8rvrlwnmnMR7EOZHU",
+          appId:  "1:848613056189:web:9d18e75518499b79aa61d4",
+          messagingSenderId: "409301001791",
+          projectId: "thepointapp-9227b",
+          authDomain: "thepointapp-9227b.firebaseapp.com",
+          storageBucket: "thepointapp-9227b.appspot.com"
+      )); */
   runApp(MyApp());
 }
 

@@ -1,15 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:thepointapp/src/msic/style.dart';
-import 'package:thepointapp/src/network/sessionService.dart';
 import 'package:thepointapp/src/viewModel/authentificationViewModel.dart';
 
 class SessionForm extends AuthentificationViewModel { 
-
   @override
   void initState() {
-    super.initState();
+    super.initState(); 
   }
 
   @override
@@ -52,14 +49,16 @@ class SessionForm extends AuthentificationViewModel {
           CupertinoButton(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: Colors.indigo,
-            onPressed: () {  },
+            onPressed: () { 
+              signInPhone();
+             },
             child: const Text( 'Entrar con número de celular',  style: style16White,),),
           const SizedBoxH10(),
           CupertinoButton(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: Colors.indigo,
             onPressed: () async {  
-              await sessionManager.authWithGoogle();
+              signInWithGoogle();               
             },
             child: const Text( 'Google',  style: style16White,),),
           const SizedBoxH10(),

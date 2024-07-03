@@ -1,48 +1,48 @@
 {
   "project_info": {
-    "project_number": "409301001791",
-    "project_id": "thepointapp-9227b",
-    "storage_bucket": "thepointapp-9227b.appspot.com"
+    "project_number": "1010715647984",
+    "project_id": "appthepoint",
+    "storage_bucket": "appthepoint.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:409301001791:android:5b9f36db0e7c00873afa8a",
+        "mobilesdk_app_id": "1:1010715647984:android:2af5aed0663d128b588735",
         "android_client_info": {
-          "package_name": "com.example.thepointapp"
+          "package_name": "com.hache.thepointapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "409301001791-ulss4r99ocpvb7bhid5dh92i698je53f.apps.googleusercontent.com",
+          "client_id": "1010715647984-9nd6i5ldeojsrdc2ff89i8dnklqa0ep2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.thepointapp",
-            "certificate_hash": "2c2f7bf4296b33d7fc8efafd9fe18c7e1439771e"
+            "package_name": "com.hache.thepointapp",
+            "certificate_hash": "a590bdc976bdc87dd340e06191e9f794f9a68097"
           }
         },
         {
-          "client_id": "409301001791-0tu8vt3cm9pavlpictpnc2drc2na7d7r.apps.googleusercontent.com",
+          "client_id": "1010715647984-haahbdbv1nndl8qkr7pqf0ob3su9m3i9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD3wST55DRDTD2Dmj8rvrlwnmnMR7EOZHU"
+          "current_key": "AIzaSyCT8FBDKGGcazMVJVjSCO6T67ed1rGAptc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "409301001791-0tu8vt3cm9pavlpictpnc2drc2na7d7r.apps.googleusercontent.com",
+              "client_id": "1010715647984-haahbdbv1nndl8qkr7pqf0ob3su9m3i9.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "409301001791-bqlj8lo5gd10f7sfrc2t0phq18dq2kc1.apps.googleusercontent.com",
+              "client_id": "1010715647984-57htdlc6hfd3ndfesmshomc4jqhgpvsn.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.thepointapp"
+                "bundle_id": "com.hache.thepointapp"
               }
             }
           ]

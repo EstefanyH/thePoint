@@ -6,28 +6,31 @@ import 'package:thepointapp/src/network/iNetwork/iSessionService.dart';
 
 class SessionService extends ISessionService with ChangeNotifier  {
   SessionService() : super();
-  final _signIn = GoogleSignIn.standard();
-  final _auth = FirebaseAuth.instance;
+  final auth = FirebaseAuth.instance;
+  final signIn = GoogleSignIn();
 
   @override
   Future<UserCredential?> authWithGoogle() async {
     try {
-      final _user = await _signIn.signIn();
-    
-      final _account = await _user?.authentication;
+      final user = await signIn.signIn();
+    /*
+    if (signIn != null) {
+    }*/
       
-      print("Token -> {$_account?.accessToken}");
-
+      final account = await user?.authentication;
       final credential = GoogleAuthProvider.credential(
-        accessToken: _account?.accessToken,
-        idToken: _account?.idToken);
+        accessToken: account?.accessToken,
+        idToken: account?.idToken);
       
-      
-      return await _auth.signInWithCredential(credential);
+      var data = await auth.signInWithCredential(credential) ;
 
-    } catch(e) {
-      print(e.toString());
-      await _signIn.signOut();
+      print(data.user?.displayName);
+
+      return data;
+
+    } on FirebaseAuthException catch(e) {
+      print('ws authWithGoogle Error -> $e.toString()');
+      await signIn.signOut();
     }
     return null;
   }
