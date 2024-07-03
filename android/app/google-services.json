@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1010715647984",
+    "project_id": "appthepoint",
+    "storage_bucket": "appthepoint.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010715647984:android:2af5aed0663d128b588735",
+        "android_client_info": {
+          "package_name": "com.hache.thepointapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010715647984-9nd6i5ldeojsrdc2ff89i8dnklqa0ep2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hache.thepointapp",
+            "certificate_hash": "a590bdc976bdc87dd340e06191e9f794f9a68097"
+          }
+        },
+        {
+          "client_id": "1010715647984-haahbdbv1nndl8qkr7pqf0ob3su9m3i9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT8FBDKGGcazMVJVjSCO6T67ed1rGAptc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010715647984-haahbdbv1nndl8qkr7pqf0ob3su9m3i9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1010715647984-57htdlc6hfd3ndfesmshomc4jqhgpvsn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hache.thepointapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
