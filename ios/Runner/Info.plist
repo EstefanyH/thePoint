@@ -66,6 +66,12 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is used to show nearby places.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is used to show nearby places.</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
 <!-- End of the Google Sign-in Section -->
 </dict>
 </plist>

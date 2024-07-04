@@ -13,4 +13,8 @@ class SendViewModel extends State<SendPage> {
   void goBackPhoneView() {
     Navigator.popAndPushNamed(context, RouteManager.phonePage);
   }
+
+  void goToRaceView() {
+    Navigator.popAndPushNamed(context, RouteManager.mainPage);
+  }
 }

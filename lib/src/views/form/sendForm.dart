@@ -72,7 +72,7 @@ class SendForm extends SendViewModel{
                     Text( 'Verificar', 
                     style: style16White,),
                   ],), 
-                  onPressed: () { }
+                  onPressed: () {  goToRaceView(); }
                 ),
                 const SizedBoxH30(),
                 const Text('Reenviar código',),
