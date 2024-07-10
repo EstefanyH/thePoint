@@ -1,12 +1,22 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:thepointapp/src/msic/style.dart';
+import 'package:thepointapp/src/util/constant.dart';
+import 'package:thepointapp/src/util/permissions.dart';
 import 'package:thepointapp/src/viewModel/authentificationViewModel.dart';
 
 class SessionForm extends AuthentificationViewModel { 
+  
   @override
-  void initState() {
-    super.initState(); 
+  void initState()  {
+    super.initState();  
+    try {
+      setState(() {
+        Permissions.checkLocationPermission();
+      });
+    }catch (er){
+      print(er.toString());
+    }
   }
 
   @override
@@ -16,7 +26,7 @@ class SessionForm extends AuthentificationViewModel {
 
   @override
   Widget build(BuildContext context) {
-
+     
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -26,14 +36,14 @@ class SessionForm extends AuthentificationViewModel {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Row(
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Container(
-                      color: Colors.blue,
-                      child: Center(child: Text('Top Left', style: TextStyle(color: Colors.white))),
+                    child: Image.asset(
+                      'assets/images/illustration-1.png',
+                      height: 540,
                     ),
                   ),
                 ],
@@ -43,16 +53,15 @@ class SessionForm extends AuthentificationViewModel {
               flex: 1,
               child: Column(
                 children: [
-                  const SizedBoxH50(),
                   const Text('Inicio sesión con:',
                   style: TextStyle(
                           fontFamily: "Montserrat",
                           fontSize: 20.0, 
-                          color: Colors.indigo,
-                          fontWeight: FontWeight.w300)),
+                          color: Colors.black38,
+                          fontWeight: FontWeight.bold)),
                   const SizedBoxH20(),
                   CupertinoButton(
-                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       color: Colors.indigo,
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -62,20 +71,6 @@ class SessionForm extends AuthentificationViewModel {
                       ],), 
                       onPressed: () {   
                         signInPhone();
-                      }
-                    ),
-                  const SizedBoxH10(),
-                  CupertinoButton(
-                      borderRadius: const BorderRadius.all(Radius.circular(10)),
-                      color: Colors.indigo,
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                        Text( 'Google', 
-                        style: style16White,),
-                      ],), 
-                      onPressed: () {   
-                        signInWithGoogle();
                       }
                     ),
                   const SizedBoxH10(),

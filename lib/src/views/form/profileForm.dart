@@ -14,7 +14,9 @@ class ProfileForm extends ProfileViewModel {
         padding: EdgeInsets.all(10),
         child: Column(
           children: [
-            Text('Cerrar Sesión')
+            InkWell(
+              child: Text('Cerrar Sesión'), 
+              onTap: () { goToSession (); },)
           ],
         ),
       ),

@@ -1,9 +1,11 @@
-
+import 'dart:math';
 import 'package:flutter/widgets.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
-import 'package:thepointapp/src/views/page/sendPage.dart';
+import 'package:thepointapp/src/views/page/otpPage.dart';
 
-class SendViewModel extends State<SendPage> {
+class OtpViewModel extends State<OtpPage> {
+  String code = '';
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -17,4 +19,5 @@ class SendViewModel extends State<SendPage> {
   void goToRaceView() {
     Navigator.popAndPushNamed(context, RouteManager.mainPage);
   }
+
 }

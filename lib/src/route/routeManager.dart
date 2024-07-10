@@ -5,7 +5,7 @@ import 'package:thepointapp/src/views/page/mainPage.dart';
 import 'package:thepointapp/src/views/page/mapPage.dart';
 import 'package:thepointapp/src/views/page/phonePage.dart';
 import 'package:thepointapp/src/views/page/racePage.dart';
-import 'package:thepointapp/src/views/page/sendPage.dart';
+import 'package:thepointapp/src/views/page/otpPage.dart';
 import 'package:thepointapp/src/views/page/sessionPage.dart';
 import 'package:thepointapp/src/views/page/splashPage.dart';
 
@@ -14,7 +14,7 @@ class RouteManager {
   static const String loginPage = '/loginPage';
   static const String sessionPage = '/sessionPage';
   static const String phonePage = '/phonePage';
-  static const String sendPage = '/sendPage';
+  static const String otpPage = '/otpPage';
   static const String racePage = '/racePage';
   static const String mapPage = '/mapPage';
   static const String mainPage = '/MainPage';
@@ -29,8 +29,8 @@ class RouteManager {
         return MaterialPageRoute(builder: (context) => SessionPage());
       case phonePage:
         return MaterialPageRoute(builder: (context) => PhonePage());
-      case sendPage:
-        return MaterialPageRoute(builder: (context) => SendPage());
+      case otpPage:
+        return MaterialPageRoute(builder: (context) => OtpPage());
       case racePage:
         return MaterialPageRoute(builder: (context) => RacePage());
       case mapPage:
