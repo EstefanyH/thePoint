@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:thepointapp/src/network/loginService.dart';
 import 'package:thepointapp/src/network/sessionService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
-import 'package:thepointapp/src/util/firebaseOptions.dart';
 
 void main() async {
  

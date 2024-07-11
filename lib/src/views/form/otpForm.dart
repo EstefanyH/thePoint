@@ -1,10 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:thepointapp/src/msic/style.dart';
+import 'package:thepointapp/src/util/constant.dart';
 import 'package:thepointapp/src/viewModel/otpViewModel.dart';
 
 class OtpForm extends OtpViewModel{
-  final List<TextEditingController> _controllers = List.generate(4, (index) => TextEditingController());
+  
+  TextEditingController otp1Controller = TextEditingController();
+  TextEditingController otp2Controller = TextEditingController();
+  TextEditingController otp3Controller = TextEditingController();
+  TextEditingController otp4Controller = TextEditingController();
+  String inpText = '';
+
 
   @override
   void initState() {
@@ -13,6 +20,8 @@ class OtpForm extends OtpViewModel{
 
   @override
   Widget build(BuildContext context) {
+    final String subtitle = "Hemos enviado un código de verificación OTP a su número +51 $gb_phone";
+
     return  Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -32,7 +41,7 @@ class OtpForm extends OtpViewModel{
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text('Verificación', style: titleStyleIndigo,),
-                const Text('Hemos enviado un código de verificación OTP a su número #########',),
+                Text(subtitle,),
                 const SizedBoxH50(),
                 Container(
                   width: 250,
@@ -48,10 +57,10 @@ class OtpForm extends OtpViewModel{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _textfieldOTP(first: true, last: false),
-                    _textfieldOTP(first: false, last: false),
-                    _textfieldOTP(first: false, last: false),
-                    _textfieldOTP(first: false, last: true),
+                    _textfieldOTP(first: true, last: false, controller: otp1Controller),
+                    _textfieldOTP(first: false, last: false, controller: otp2Controller),
+                    _textfieldOTP(first: false, last: false, controller: otp3Controller),
+                    _textfieldOTP(first: false, last: true, controller: otp4Controller),
                   ],
                 ),
                 const SizedBoxH30(),
@@ -64,7 +73,13 @@ class OtpForm extends OtpViewModel{
                     Text( 'Verificar', 
                     style: style16White,),
                   ],), 
-                  onPressed: () {  goToRaceView(); }
+                  onPressed: () {  
+                    inpText = otp1Controller.text;
+                    inpText += otp2Controller.text;
+                    inpText += otp3Controller.text;
+                    inpText += otp4Controller.text; 
+                    goToRaceView(inpText); 
+                  }
                 ),
                 const SizedBoxH30(),
                 const Text('Reenviar código',),
@@ -75,21 +90,24 @@ class OtpForm extends OtpViewModel{
     );
   }
 
-
-  _textfieldOTP({required bool first, last}) {
-    return  Container(
+  _textfieldOTP({required bool first, last, required TextEditingController controller}) {
+    return  SizedBox(
       height: 85,
       child: AspectRatio(
         aspectRatio: 0.7, 
         child: TextField(
+          controller: controller,
           autofocus: true,
-          onChanged: (value) { 
+          onChanged: (value) {
+
             if (value.length == 1 && last == false) {
               FocusScope.of(context).nextFocus();
             }
-            if (value.length == 0 && first == false) {
+
+            if (value.isEmpty && first == false) {
               FocusScope.of(context).previousFocus();
             }
+
           },
           showCursor: false,
           readOnly: false,
@@ -99,13 +117,13 @@ class OtpForm extends OtpViewModel{
           keyboardType: TextInputType.number,
           maxLength: 1,
           decoration: InputDecoration(
-            counter: Offstage(), 
+            counter: const Offstage(), 
             enabledBorder:  OutlineInputBorder(
-              borderSide: BorderSide(width: 2, color: Colors.black12),
+              borderSide: const BorderSide(width: 2, color: Colors.black12),
               borderRadius:  BorderRadius.circular(12)
             ),
             focusedBorder:  OutlineInputBorder(
-              borderSide: BorderSide(width: 2, color: Colors.purple),
+              borderSide: const BorderSide(width: 2, color: Colors.purple),
               borderRadius:  BorderRadius.circular(12)
             ),
           ),

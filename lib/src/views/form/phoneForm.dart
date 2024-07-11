@@ -25,7 +25,9 @@ class PhoneForm extends PhoneViewModel {
                 Align(
                   alignment: Alignment.topRight,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      closeView();
+                    },
                     child: const Icon(
                       Icons.close,
                       color: Colors.indigo,

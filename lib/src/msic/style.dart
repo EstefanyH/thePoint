@@ -90,6 +90,18 @@ class SizedBoxH50 extends StatelessWidget {
   }
 }
 
+class Separator extends StatelessWidget {
+  const Separator({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+      height: 1, 
+      color: Colors.black38 
+    );
+  }
+}
+
 //text styles
 const TextStyle style16Indigo = TextStyle(
   fontFamily: "Montserrat",

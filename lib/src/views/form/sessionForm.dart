@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'; 
 import 'package:thepointapp/src/msic/style.dart';
-import 'package:thepointapp/src/util/constant.dart';
 import 'package:thepointapp/src/util/permissions.dart';
 import 'package:thepointapp/src/viewModel/authentificationViewModel.dart';
 

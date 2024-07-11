@@ -32,12 +32,16 @@ class PhoneViewModel extends State<PhonePage> {
 
   void gotoVerifyView(String numberPhone) async {
     if (numberPhone == '' ||  numberPhone.length < 9) {
-      showSnackBar(context, "Ingrese numero celular", 300);
+      showSnackBar(context, "Ingrese numero celular", gb_duration_showSnackBar);
     } else {
       gb_phone = numberPhone; 
       generateCode();
       Navigator.popAndPushNamed(context, RouteManager.otpPage);
     }
+  }
+
+  void closeView() {
+    Navigator.popAndPushNamed(context, RouteManager.sessionPage);
   }
    
 }
