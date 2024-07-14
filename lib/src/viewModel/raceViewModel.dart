@@ -50,7 +50,6 @@ class RaceViewModel extends State<RacePage> {
     Navigator.popAndPushNamed(context, RouteManager.mapPage);
   }
 
-
   void getCurrentLocation() async {
     try {
       final LocationData locationResult = await location.getLocation();
@@ -69,8 +68,12 @@ class RaceViewModel extends State<RacePage> {
         );
       }
     } catch(ex){
-
+      print(ex.toString());
     }
+  }
+
+  void goToLookingView() async {
+    Navigator.popAndPushNamed(context, RouteManager.lookingPage);
   }
   @override
   Widget build(BuildContext context) {

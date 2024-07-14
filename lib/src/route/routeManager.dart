@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:thepointapp/src/views/page/loginPage.dart';
+import 'package:thepointapp/src/views/page/lookingPage.dart';
 import 'package:thepointapp/src/views/page/mainPage.dart';
 import 'package:thepointapp/src/views/page/mapPage.dart';
 import 'package:thepointapp/src/views/page/phonePage.dart';
@@ -18,6 +19,7 @@ class RouteManager {
   static const String racePage = '/racePage';
   static const String mapPage = '/mapPage';
   static const String mainPage = '/MainPage';
+  static const String lookingPage = '/LookingPage';
 
   static Route<dynamic> onGenerationRoute(RouteSettings setting) {
     switch(setting.name) {
@@ -37,6 +39,8 @@ class RouteManager {
         return MaterialPageRoute(builder: (context) => MapPage());
       case mainPage:
         return MaterialPageRoute(builder: (context) => MainPage());
+      case lookingPage:
+        return MaterialPageRoute(builder: (context) => LookingPage());
       default:
         throw Exception('No route found!');
     }

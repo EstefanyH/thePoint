@@ -105,7 +105,9 @@ class RaceForm extends RaceViewModel {
                         Text( 'Taxi...', 
                         style: style16White,),
                       ],), 
-                      onPressed: () {  }
+                      onPressed: () {  
+                        goToLookingView();
+                      }
                     ),
                   ],
                 ),

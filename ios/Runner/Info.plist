@@ -67,11 +67,13 @@
 		</dict>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location is used to show nearby places.</string>
+	<string>This app needs access to location when open.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Your location is used to show nearby places.</string>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Want to display location on map, and track it.</string>
 <!-- End of the Google Sign-in Section -->
 </dict>
 </plist>
