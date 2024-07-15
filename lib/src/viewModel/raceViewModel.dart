@@ -4,25 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:thepointapp/src/models/request/raceRequest.dart';
+import 'package:thepointapp/src/msic/widget/dialog.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
+import 'package:thepointapp/src/util/constant.dart';
 import 'package:thepointapp/src/views/page/racePage.dart';
 
 class RaceViewModel extends State<RacePage> {
-  GoogleMapController? mapController;
-  //final Completer<GoogleMapController> mapController = Completer<GoogleMapController>();
+  GoogleMapController? mapController; 
   
   LocationData? currentLocation;
 
-  final Location location = Location();
+  final TextEditingController montoController = TextEditingController();
+  final TextEditingController originController = TextEditingController();
+  final TextEditingController destinationController = TextEditingController();
 
-    /*
-  CameraPosition point = const CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
-      */
-  //final LatLng point = const LatLng(45.521563, -122.677433);
+  final Location location = Location();
+  late RaceRequest data;
   
   Future<void> requestPermission() async {
     var status = await Permission.location.status;
@@ -46,8 +44,7 @@ class RaceViewModel extends State<RacePage> {
   }
 
   void goToMapView() {
-    print('tap');
-    Navigator.popAndPushNamed(context, RouteManager.mapPage);
+    Navigator.pushNamed(context, RouteManager.mapPage);
   }
 
   void getCurrentLocation() async {
@@ -73,7 +70,39 @@ class RaceViewModel extends State<RacePage> {
   }
 
   void goToLookingView() async {
-    Navigator.popAndPushNamed(context, RouteManager.lookingPage);
+    if (validateData()) {
+      Navigator.popAndPushNamed(context, RouteManager.lookingPage);
+    }
+  }
+  
+  void loadData() {
+    data = race;
+    originController.text = data.origin.isEmpty ?  '' : data.origin;
+    destinationController.text = data.destination.isEmpty ?  '' : data.destination;
+    montoController.text = data.precio.toString();
+  }
+
+  void loadClear(){
+    originController.clear();
+    originController.clear();
+    destinationController.clear();
+  }
+  
+  bool validateData() {
+    if(originController.text.isEmpty){
+      showSnackBar(context, 'Ingrese punto de partida', gb_duration_showSnackBar);
+      return false;
+    }
+    if(destinationController.text.isEmpty){
+      showSnackBar(context, 'Ingrese punto de llegada', gb_duration_showSnackBar);
+      return false;
+    }
+    if(montoController.text.isEmpty && montoController.text.trim().toString() == '0.00' 
+      && montoController.text.trim().toString() == '0.0' && montoController.text.trim().toString() == '0'){
+      showSnackBar(context, 'Ingrese precio de servicio', gb_duration_showSnackBar);
+      return false;
+    }
+    return true;
   }
   @override
   Widget build(BuildContext context) {

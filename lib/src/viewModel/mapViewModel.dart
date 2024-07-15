@@ -3,7 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:thepointapp/src/models/request/raceRequest.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
+import 'package:thepointapp/src/util/apiService.dart';
 import 'package:thepointapp/src/util/constant.dart';
 import 'package:thepointapp/src/views/page/mapPage.dart';
 import 'package:uuid/uuid.dart';
@@ -16,13 +18,22 @@ class MapViewModel extends State<MapPage> {
   List<dynamic> listOfLocation = [];
 
   void goBackRaceView() {
+    Navigator.popAndPushNamed( context, RouteManager.mainPage);
+  }
+
+  void goSelectionLocation(String ruta) {
+    print('Selection Location -> ${ruta}');
+    if (gb_isOrigin) {
+      race.origin = ruta;
+    } else {
+      race.destination = ruta;
+    }
     Navigator.popAndPushNamed(context, RouteManager.mainPage);
   }
   
   void placeSuggestion(String input) async {
     try {
-      String baseUrl = "https://maps.googleapis.com/maps/api/place/autocomplete/json";
-      String request = '$baseUrl?input=$input&key=$GOOGLE_MAP_API_KEY&sessiontoken=$token';
+      String request = '$API_GOOGLE_PLACE?input=$input&key=$GOOGLE_MAP_API_KEY&sessiontoken=$token';
       var response = await http.get(Uri.parse(request));
 
       var data = json.decode(response.body);

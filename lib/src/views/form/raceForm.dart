@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:thepointapp/src/models/request/raceRequest.dart';
 import 'package:thepointapp/src/msic/style.dart';
 import 'package:thepointapp/src/util/constant.dart';
 import 'package:thepointapp/src/util/permissions.dart';
 import 'package:thepointapp/src/viewModel/raceViewModel.dart';
 
 class RaceForm extends RaceViewModel {
-  
+
   @override
   void initState() {
     super.initState();
@@ -16,6 +17,7 @@ class RaceForm extends RaceViewModel {
         if (isLocation){
           getCurrentLocation();
         }
+        loadData();
     });
   }
 
@@ -57,6 +59,7 @@ class RaceForm extends RaceViewModel {
                     const Text('Te llevo ah..', style: titleStyleIndigo,),
                     InkWell(
                       child: TextFormField(
+                          controller: originController,
                           enabled: false,
                           decoration: const InputDecoration(
                             counterText: '',
@@ -67,12 +70,14 @@ class RaceForm extends RaceViewModel {
                           readOnly: true
                         ),
                       onTap: () {
+                        gb_isOrigin = true;
                         goToMapView(); 
                       },
                     ),
                     const SizedBoxH10(),
                     InkWell(
                       child: TextFormField(
+                        controller: destinationController,
                         enabled: false,
                         keyboardType: TextInputType.number,
                         decoration: const InputDecoration(
@@ -83,10 +88,12 @@ class RaceForm extends RaceViewModel {
                         )
                       ),
                       onTap: () {
+                        gb_isOrigin = false;
                       goToMapView(); 
                       },),                            
                     const SizedBoxH10(),
                     TextFormField(
+                      controller: montoController,
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         counterText: '',

@@ -1,5 +1,9 @@
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:thepointapp/src/models/request/raceRequest.dart';
 import 'package:thepointapp/src/msic/style.dart';
 import 'package:thepointapp/src/viewModel/mapViewModel.dart';
 
@@ -20,6 +24,7 @@ class MapForm extends MapViewModel {
 
   @override
   Widget build(BuildContext context) {
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -61,9 +66,35 @@ class MapForm extends MapViewModel {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: listOfLocation.length,
                   itemBuilder: (context, index) {
+                    var description = listOfLocation[index]['description'];
+                    var result = description.split(',');
+                    var title = result[0];
+                    var subtitle = '';
+                    if( result.length > 1) {
+                      subtitle = result[1];
+                    }
+
                     return GestureDetector(
-                      onTap: () { },
-                      child: Text(listOfLocation[index]['description']),
+                      onTap: () { 
+                        goSelectionLocation(description);
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(Icons.fmd_good, color: Colors.blue, size: 30,),
+                            SizedBox(width: 10,),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                              Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(subtitle)
+                            ],)
+                          ],
+                        )
+                      ) 
+                      //Text(listOfLocation[index]['description']),
                     );
                   },
                 )
