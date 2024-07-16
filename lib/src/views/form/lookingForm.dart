@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:thepointapp/src/viewModel/lookingViewModel.dart';
+import 'package:thepointapp/src/views/modal/modalSearchDriver.dart';
 
 class LookingForm extends LookingViewModel {
   
@@ -14,6 +15,13 @@ class LookingForm extends LookingViewModel {
         generatePolylineFromPoint(coordinates)
       })
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      showModalBottomSheet( 
+        isDismissible: false, enableDrag: false,
+        context: context, 
+        builder: ( context) => const ModalSearchDriver());
+    });
   }
 
   @override
@@ -21,27 +29,16 @@ class LookingForm extends LookingViewModel {
     // TODO: implement build
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-         leading: IconButton(
-          onPressed: () { 
-            goBackRaceView();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new_sharp,
-          color: Colors.indigo,), ),
-        ),
       backgroundColor: Colors.white,
       body: currentP == null ? 
         const Center(child: Text('Loading'),) 
-        : GoogleMap( onMapCreated: ((GoogleMapController controller) => 
-          mapController.complete(controller)),
-        initialCameraPosition: CameraPosition(
+        : 
+        GoogleMap( 
+          onMapCreated: ((GoogleMapController controller) => 
+            mapController.complete(controller)),
+          initialCameraPosition: CameraPosition(
           target: pGooglePlex, zoom: 15),
           markers: {
-            /*Marker(
-              markerId: MarkerId("_currentLocation"), 
-              icon: BitmapDescriptor.defaultMarker, 
-              position: currentP!),*/
             Marker(
               markerId: MarkerId("_sourceLocation"), 
               icon: BitmapDescriptor.defaultMarker, 
@@ -52,7 +49,8 @@ class LookingForm extends LookingViewModel {
               position: pApplePark)
           },
           polylines: Set<Polyline>.of(polylines.values),
-      )
+      ), 
+  
     );
   }
 

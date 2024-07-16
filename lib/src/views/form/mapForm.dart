@@ -95,7 +95,6 @@ class MapForm extends MapViewModel {
                           ],
                         )
                       ) 
-                      //Text(listOfLocation[index]['description']),
                     );
                   },
                 )

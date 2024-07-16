@@ -1,6 +1,4 @@
 
-import 'package:json_annotation/json_annotation.dart';
-
 class CoordenadaResponse {
   final double lat;
   final double lng;
