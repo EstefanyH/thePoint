@@ -3,7 +3,10 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:thepointapp/src/models/request/coordenadaRequest.dart';
 import 'package:thepointapp/src/models/request/raceRequest.dart';
+import 'package:thepointapp/src/network/mapService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
 import 'package:thepointapp/src/util/apiService.dart';
 import 'package:thepointapp/src/util/constant.dart';
@@ -12,6 +15,9 @@ import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
 
 class MapViewModel extends State<MapPage> {
+
+  MapService get service =>  context.read<MapService>();
+
   final String token = '123456789';
 
   var uuid = const Uuid();
@@ -21,33 +27,28 @@ class MapViewModel extends State<MapPage> {
     Navigator.popAndPushNamed( context, RouteManager.mainPage);
   }
 
-  void goSelectionLocation(String ruta) {
+  void goSelectionLocation(String ruta, String place) async {
     print('Selection Location -> ${ruta}');
+    
+    var result = await service.getLocation(place);
+
     if (gb_isOrigin) {
       race.origin = ruta;
+      race.originLocation = result;
     } else {
       race.destination = ruta;
+      race.destinationLocation = result;
     }
     Navigator.popAndPushNamed(context, RouteManager.mainPage);
   }
   
   void placeSuggestion(String input) async {
     try {
-      String request = '$API_GOOGLE_PLACE?input=$input&key=$GOOGLE_MAP_API_KEY&sessiontoken=$token';
-      var response = await http.get(Uri.parse(request));
+      var result = await service.searchAdress(input, token);
 
-      var data = json.decode(response.body);
-       
-      if (kDebugMode) {
-        print('request-> ${request}');
-        print(data);
-      }
-      if (response.statusCode == 200) {
-        setState(() {
-          listOfLocation = json.decode(response.body)['predictions'];
-        });
-      } else {}
-      throw Exception('Failed');
+      setState(() {
+          listOfLocation = result as List;
+      });
     } catch(er) {
       print(er.toString());
     }

@@ -38,10 +38,10 @@ class LookingForm extends LookingViewModel {
         initialCameraPosition: CameraPosition(
           target: pGooglePlex, zoom: 15),
           markers: {
-            Marker(
+            /*Marker(
               markerId: MarkerId("_currentLocation"), 
               icon: BitmapDescriptor.defaultMarker, 
-              position: currentP!),
+              position: currentP!),*/
             Marker(
               markerId: MarkerId("_sourceLocation"), 
               icon: BitmapDescriptor.defaultMarker, 

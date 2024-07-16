@@ -80,6 +80,7 @@ class RaceViewModel extends State<RacePage> {
     originController.text = data.origin.isEmpty ?  '' : data.origin;
     destinationController.text = data.destination.isEmpty ?  '' : data.destination;
     montoController.text = data.precio.toString();
+    
   }
 
   void loadClear(){
@@ -89,14 +90,16 @@ class RaceViewModel extends State<RacePage> {
   }
   
   bool validateData() {
-    if(originController.text.isEmpty){
+    if(originController.text.isEmpty) {
       showSnackBar(context, 'Ingrese punto de partida', gb_duration_showSnackBar);
       return false;
     }
-    if(destinationController.text.isEmpty){
+
+    if(destinationController.text.isEmpty) {
       showSnackBar(context, 'Ingrese punto de llegada', gb_duration_showSnackBar);
       return false;
     }
+    
     if(montoController.text.isEmpty && montoController.text.trim().toString() == '0.00' 
       && montoController.text.trim().toString() == '0.0' && montoController.text.trim().toString() == '0'){
       showSnackBar(context, 'Ingrese precio de servicio', gb_duration_showSnackBar);

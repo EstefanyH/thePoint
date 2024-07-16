@@ -1,7 +1,11 @@
+import 'package:thepointapp/src/util/constant.dart';
+
 String SERVER_API_URL = 'https://chatbot-electrodunas.analytia.pe/';
 String API_LOGIN = '${SERVER_API_URL}loginemployee';
 
 
-String API_GOOGLE_PLACE = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
+String API_GOOGLE_PLACE = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%s&key=$GOOGLE_MAP_API_KEY&sessiontoken=%s';
+//String request = '$API_GOOGLE_PLACE?input=$input&key=$GOOGLE_MAP_API_KEY&sessiontoken=$token';
+String API_GOOGLE_GEOCODING = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=%s&key=$GOOGLE_MAP_API_KEY';
 
 String ContentType = 'application/json';

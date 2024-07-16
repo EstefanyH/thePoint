@@ -14,8 +14,9 @@ class LookingViewModel extends State<LookingPage> {
   Location locationController = new Location();
   final Completer<GoogleMapController> mapController = Completer<GoogleMapController>();
 
-  LatLng pGooglePlex = LatLng(37.4223, -122.0848);
-  LatLng pApplePark = LatLng(37.3346, -122.0090);
+  LatLng pGooglePlex = LatLng(race.originLocation.lat, race.originLocation.lng);
+  LatLng pApplePark = LatLng(race.destinationLocation.lat, race.destinationLocation.lng);
+  
   LatLng? currentP = null;
 
   Map<PolylineId, Polyline> polylines = {};
@@ -75,7 +76,7 @@ class LookingViewModel extends State<LookingPage> {
       request: polylineRequest, googleApiKey: GOOGLE_MAP_API_KEY
     );
 
-    if (result.points.isEmpty){
+    if (!result.points.isEmpty){
       result.points.forEach((PointLatLng point) {
         polylineCoordinate.add(LatLng(point.latitude, point.longitude));
       });
@@ -89,7 +90,7 @@ class LookingViewModel extends State<LookingPage> {
     PolylineId id = PolylineId("poly");
     Polyline polyline = Polyline(
       polylineId: id, 
-      color: Colors.black, 
+      color: Colors.blue, 
       points: polylineCoordinate, 
       width: 8);
       setState(() {

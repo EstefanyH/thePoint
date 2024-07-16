@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thepointapp/src/network/loginService.dart';
+import 'package:thepointapp/src/network/mapService.dart';
 import 'package:thepointapp/src/network/sessionService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
 
@@ -34,7 +35,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    
     WidgetsBinding.instance.addObserver(this);
   }
  
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       providers: [
         ChangeNotifierProvider(create: (context) => SessionService()),
         ChangeNotifierProvider(create: (context) => LoginService()),
-        //ChangeNotifierProvider(create: (context) => ChatService()),
+        ChangeNotifierProvider(create: (context) => MapService()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

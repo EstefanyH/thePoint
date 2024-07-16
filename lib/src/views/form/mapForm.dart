@@ -66,6 +66,7 @@ class MapForm extends MapViewModel {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: listOfLocation.length,
                   itemBuilder: (context, index) {
+                    var place = listOfLocation[index]['place_id'];
                     var description = listOfLocation[index]['description'];
                     var result = description.split(',');
                     var title = result[0];
@@ -76,7 +77,7 @@ class MapForm extends MapViewModel {
 
                     return GestureDetector(
                       onTap: () { 
-                        goSelectionLocation(description);
+                        goSelectionLocation(description, place);
                       },
                       child: Padding(
                         padding: EdgeInsets.all(5),
