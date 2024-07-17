@@ -124,6 +124,96 @@ class ProfileForm extends ProfileViewModel {
             const Separator(),
             Visibility(
               child: Container(
+                margin: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded( 
+                      flex: 1, 
+                      child: InkWell(
+                        child: const Text('Habilitar notificaciones'), 
+                        onTap: () { goToSession (); },),),
+                    Expanded( 
+                      flex: 1, 
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                        child: Switch(  
+                          onChanged: toggleSwitch,  
+                          value: false,  
+                          activeColor: Colors.blue,  
+                          activeTrackColor: Colors.green,  
+                          inactiveThumbColor: Colors.deepPurple,  
+                          inactiveTrackColor: Colors.grey,  
+                        )  , 
+                        onTap: () { goToSession (); },),),),
+                  ],
+                ),
+              )
+            ),
+            const Separator(),
+            Visibility(
+              child: Container(
+                margin: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded( 
+                      flex: 1, 
+                      child: InkWell(
+                        child: const Text('Habilitar ubicación'), 
+                        onTap: () { goToSession (); },),),
+                    Expanded( 
+                      flex: 1, 
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                        child: Switch(  
+                          onChanged: toggleSwitch,  
+                          value: false,  
+                          activeColor: Colors.blue,  
+                          activeTrackColor: Colors.green,  
+                          inactiveThumbColor: Colors.deepPurple,  
+                          inactiveTrackColor: Colors.grey,  
+                        )  , 
+                        onTap: () { goToSession (); },),),),
+                  ],
+                ),
+              )
+            ),
+            const Separator(),
+            Visibility(
+              child: Container(
+                margin: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded( 
+                      flex: 1, 
+                      child: InkWell(
+                        child: const Text('Habilitar camara'), 
+                        onTap: () { goToSession (); },),),
+                    Expanded( 
+                      flex: 1, 
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                        child: Switch(  
+                          onChanged: toggleSwitch,  
+                          value: false,  
+                          activeColor: Colors.blue,  
+                          activeTrackColor: Colors.green,  
+                          inactiveThumbColor: Colors.deepPurple,  
+                          inactiveTrackColor: Colors.grey,  
+                        )  , 
+                        onTap: () { goToSession (); },),),),
+                  ],
+                ),
+              )
+            ),
+            const Separator(),
+            Visibility(
+              child: Container(
                 margin: const EdgeInsets.all(15.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,

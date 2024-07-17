@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thepointapp/src/network/sessionService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
+import 'package:thepointapp/src/views/page/phonePage.dart';
 import 'package:thepointapp/src/views/page/sessionPage.dart';
 
 class AuthentificationViewModel extends State<SessionPage> {
@@ -12,6 +13,7 @@ class AuthentificationViewModel extends State<SessionPage> {
     super.initState();
     
   }
+  
   
 
   Widget build(BuildContext context) {

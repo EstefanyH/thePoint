@@ -9,6 +9,10 @@ class ProfileViewModel extends State<ProfilePage> {
     Navigator.popAndPushNamed(context, RouteManager.sessionPage);
   }
 
+  void toggleSwitch(bool value) {  
+    
+  }  
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

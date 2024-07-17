@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "1010715647984",
-    "project_id": "appthepoint",
-    "storage_bucket": "appthepoint.appspot.com"
+    "project_number": "1008955286840",
+    "project_id": "thepoint-429416",
+    "storage_bucket": "thepoint-429416.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1010715647984:android:2af5aed0663d128b588735",
+        "mobilesdk_app_id": "1:1008955286840:android:ab17ee43e1858b29ac0dcd",
         "android_client_info": {
           "package_name": "com.hache.thepointapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1010715647984-9nd6i5ldeojsrdc2ff89i8dnklqa0ep2.apps.googleusercontent.com",
+          "client_id": "1008955286840-8cslflts6rsd36mt75tnodcruu581lqa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.hache.thepointapp",
@@ -22,27 +22,27 @@
           }
         },
         {
-          "client_id": "1010715647984-haahbdbv1nndl8qkr7pqf0ob3su9m3i9.apps.googleusercontent.com",
+          "client_id": "1008955286840-m8ksfb0p05qgpbf25ct0q4juigh61ut0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCT8FBDKGGcazMVJVjSCO6T67ed1rGAptc"
+          "current_key": "AIzaSyDjX-kXZqsj2VYZrIDNTZMOe62Z_goHQB8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1010715647984-haahbdbv1nndl8qkr7pqf0ob3su9m3i9.apps.googleusercontent.com",
+              "client_id": "1008955286840-m8ksfb0p05qgpbf25ct0q4juigh61ut0.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "1010715647984-57htdlc6hfd3ndfesmshomc4jqhgpvsn.apps.googleusercontent.com",
+              "client_id": "1008955286840-ercmm4lff32i2sha9hlc66gldlmktsre.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.hache.thepointapp"
+                "bundle_id": "com.example.thepointapp"
               }
             }
           ]

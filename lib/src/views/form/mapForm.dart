@@ -3,7 +3,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:thepointapp/src/models/request/raceRequest.dart';
 import 'package:thepointapp/src/msic/style.dart';
 import 'package:thepointapp/src/viewModel/mapViewModel.dart';
 
