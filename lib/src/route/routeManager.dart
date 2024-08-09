@@ -7,6 +7,7 @@ import 'package:thepointapp/src/views/page/mapPage.dart';
 import 'package:thepointapp/src/views/page/phonePage.dart';
 import 'package:thepointapp/src/views/page/racePage.dart';
 import 'package:thepointapp/src/views/page/otpPage.dart';
+import 'package:thepointapp/src/views/page/registerPage.dart';
 import 'package:thepointapp/src/views/page/sessionPage.dart';
 import 'package:thepointapp/src/views/page/splashPage.dart';
 
@@ -20,6 +21,7 @@ class RouteManager {
   static const String mapPage = '/mapPage';
   static const String mainPage = '/MainPage';
   static const String lookingPage = '/LookingPage';
+  static const String registerPage = '/RegisterPage';
 
   static Route<dynamic> onGenerationRoute(RouteSettings setting) {
     switch(setting.name) {
@@ -41,6 +43,8 @@ class RouteManager {
         return MaterialPageRoute(builder: (context) => MainPage());
       case lookingPage:
         return MaterialPageRoute(builder: (context) => LookingPage());
+      case registerPage:
+        return MaterialPageRoute(builder: (context) => RegisterPage());
       default:
         throw Exception('No route found!');
     }

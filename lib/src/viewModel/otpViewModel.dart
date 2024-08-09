@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/widgets.dart';
 import 'package:thepointapp/src/msic/widget/dialog.dart';
 import 'package:thepointapp/src/route/routeManager.dart';

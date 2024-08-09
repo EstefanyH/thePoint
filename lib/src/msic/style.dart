@@ -109,6 +109,12 @@ const TextStyle style16Indigo = TextStyle(
   color: Colors.indigo,
   fontWeight: FontWeight.w200);
 
+const TextStyle style20Indigo = TextStyle(
+  fontFamily: "Montserrat",
+  fontSize: 20.0, 
+  color: Colors.indigo,
+  fontWeight: FontWeight.normal); 
+
 const TextStyle style16White = TextStyle(
   fontFamily: "Montserrat",
   fontSize: 16,

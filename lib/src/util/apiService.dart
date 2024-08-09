@@ -1,6 +1,6 @@
 import 'package:thepointapp/src/util/constant.dart';
 
-String SERVER_API_URL = 'https://chatbot-electrodunas.analytia.pe/';
+String SERVER_API_URL = 'https://bfqtkvlfl8.execute-api.us-west-2.amazonaws.com/V1/';
 String API_LOGIN = '${SERVER_API_URL}loginemployee';
 
 

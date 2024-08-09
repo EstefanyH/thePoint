@@ -1,18 +1,10 @@
-
-import 'dart:convert';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:thepointapp/src/models/request/coordenadaRequest.dart';
-import 'package:thepointapp/src/models/request/raceRequest.dart';
 import 'package:thepointapp/src/network/mapService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
-import 'package:thepointapp/src/util/apiService.dart';
 import 'package:thepointapp/src/util/constant.dart';
 import 'package:thepointapp/src/views/page/mapPage.dart';
 import 'package:uuid/uuid.dart';
-import 'package:http/http.dart' as http;
 
 class MapViewModel extends State<MapPage> {
 
