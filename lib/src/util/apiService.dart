@@ -8,4 +8,6 @@ String API_GOOGLE_PLACE = 'https://maps.googleapis.com/maps/api/place/autocomple
 //String request = '$API_GOOGLE_PLACE?input=$input&key=$GOOGLE_MAP_API_KEY&sessiontoken=$token';
 String API_GOOGLE_GEOCODING = 'https://maps.googleapis.com/maps/api/geocode/json?place_id=%s&key=$GOOGLE_MAP_API_KEY';
 
+String API_POST_FILE = '${SERVER_API_URL}Files';
+
 String ContentType = 'application/json';

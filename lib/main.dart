@@ -8,7 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:thepointapp/firebase_options.dart';
 import 'package:thepointapp/src/models/pushNotification.dart'; 
 import 'package:thepointapp/src/network/loginService.dart';
-import 'package:thepointapp/src/network/mapService.dart'; 
+import 'package:thepointapp/src/network/mapService.dart';
+import 'package:thepointapp/src/network/registerService.dart'; 
 import 'package:thepointapp/src/network/sessionService.dart';
 import 'package:thepointapp/src/route/routeManager.dart';
 
@@ -69,6 +70,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (context) => SessionService()),
         ChangeNotifierProvider(create: (context) => LoginService()),
         ChangeNotifierProvider(create: (context) => MapService()),
+        ChangeNotifierProvider(create: (context) => RegisterService()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
