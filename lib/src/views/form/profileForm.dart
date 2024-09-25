@@ -25,7 +25,7 @@ class ProfileForm extends ProfileViewModel {
                   child: Container(
                     width: 100,
                     height: 100,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle),
                     child: Image.asset(

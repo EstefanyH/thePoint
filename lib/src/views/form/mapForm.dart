@@ -56,7 +56,7 @@ class MapForm extends MapViewModel {
                },
             ),
             const SizedBoxH20(),
-            Text('Precisar en mapa'),
+            const Text('Precisar en mapa'),
             Visibility(
               visible: searchController.text.isEmpty ? false : true,
               child: Expanded(
@@ -79,16 +79,16 @@ class MapForm extends MapViewModel {
                         goSelectionLocation(description, place);
                       },
                       child: Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(Icons.fmd_good, color: Colors.blue, size: 30,),
-                            SizedBox(width: 10,),
+                            const Icon(Icons.fmd_good, color: Colors.blue, size: 30,),
+                            const SizedBox(width: 10,),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                              Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(title, style: const TextStyle(fontWeight: FontWeight.bold),),
                               Text(subtitle)
                             ],)
                           ],

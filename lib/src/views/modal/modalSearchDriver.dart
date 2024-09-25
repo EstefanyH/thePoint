@@ -25,27 +25,27 @@ class _ModalSearchDriverState extends State<ModalSearchDriver> {
       height: 200,
       color: Colors.white,
       child: Padding(
-        padding: EdgeInsets.all(10.0), 
+        padding: const EdgeInsets.all(10.0), 
         child: Column(
           children: [
             Icon(Icons.keyboard_double_arrow_up, 
             color: Colors.orange.shade800,
             size: 30,),
-            SizedBoxH10(),
+            const SizedBoxH10(),
             const Text('Buscando....', 
                 style: TextStyle(
                           fontFamily: "Montserrat",
                           fontSize: 16.0, 
                           color: Colors.black54,
                           fontWeight: FontWeight.bold),),
-            AppProgressIndicator(),
+            const AppProgressIndicator(),
             const Text('Se esta asignando chofer', 
                 style: TextStyle(
                           fontFamily: "Montserrat",
                           fontSize: 16.0, 
                           color: Colors.black54,
                           fontWeight: FontWeight.bold),),
-            SizedBoxH10(),
+            const SizedBoxH10(),
             CupertinoButton(
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               color: Colors.orange.shade800,

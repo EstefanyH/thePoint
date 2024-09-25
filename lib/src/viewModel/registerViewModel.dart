@@ -62,8 +62,8 @@ class RegisterViewModel extends State<RegisterPage> {
   }
 
   void _pickImage(ImageSource source, BuildContext context) async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? image = await _picker.pickImage(source: source);
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: source);
     if (image != null) {
       // Do something with the selected image (e.g., display it, upload it)
       print('Picked image: ${image.path}');
@@ -76,7 +76,7 @@ class RegisterViewModel extends State<RegisterPage> {
   }
 
   void saveFile(String filePath) {
-    if (!filePath.isEmpty) {
+    if (filePath.isNotEmpty) {
       service.postFile(filePath);
     } else {
       showSnackBar(context, 'Seleccionar foto de perfil', gb_duration_showSnackBar);

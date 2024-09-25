@@ -32,7 +32,7 @@ class RaceViewModel extends State<RacePage> {
     } else {
       // Handle permission denied
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Location permission denied')),
+        const SnackBar(content: Text('Location permission denied')),
       );
     }
   }

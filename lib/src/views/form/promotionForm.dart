@@ -9,7 +9,7 @@ class PromotionsForm extends PromotionViewModel {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Promociones')),
+        title: const Text('Promociones')),
     );
   }
 

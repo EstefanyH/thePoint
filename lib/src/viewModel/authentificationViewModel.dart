@@ -53,14 +53,12 @@ class AuthentificationViewModel extends State<SessionPage> {
           totalNotifications++;
         });
 
-        if(notificationInfo != null) {
-          showSimpleNotification(
-            Text(notificationInfo.title), 
-            subtitle: Text(notificationInfo.body ?? ''),
-            background: Colors.cyan.shade700,
-            duration: Duration(seconds: 2));
-        }
-      });
+        showSimpleNotification(
+          Text(notificationInfo.title), 
+          subtitle: Text(notificationInfo.body ?? ''),
+          background: Colors.cyan.shade700,
+          duration: Duration(seconds: 2));
+            });
     } else {
       print('User declined or has not accepted permission');
     }
@@ -84,6 +82,7 @@ class AuthentificationViewModel extends State<SessionPage> {
     } 
   }
 
+  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     throw UnimplementedError();

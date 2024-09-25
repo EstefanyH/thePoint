@@ -53,7 +53,7 @@ class RaceForm extends RaceViewModel {
             Expanded(
               flex: 1,
               child: Padding(
-                padding: EdgeInsets.all(15), 
+                padding: const EdgeInsets.all(15), 
                 child: Column(
                   children: [
                     const Text('Te llevo ah..', style: titleStyleIndigo,),

@@ -267,8 +267,8 @@ class RegisterForm extends RegisterViewModel {
   }
 
   void _pickImage(ImageSource source, BuildContext context) async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? image = await _picker.pickImage(source: source);
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: source);
     if (image != null) {
       // Do something with the selected image (e.g., display it, upload it)
       print('Picked image: ${image.path}');

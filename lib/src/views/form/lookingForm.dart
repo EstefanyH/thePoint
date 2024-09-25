@@ -40,11 +40,11 @@ class LookingForm extends LookingViewModel {
           target: pGooglePlex, zoom: 15),
           markers: {
             Marker(
-              markerId: MarkerId("_sourceLocation"), 
+              markerId: const MarkerId("_sourceLocation"), 
               icon: BitmapDescriptor.defaultMarker, 
               position: pGooglePlex),
             Marker(
-              markerId: MarkerId("_destinationLocation"), 
+              markerId: const MarkerId("_destinationLocation"), 
               icon: BitmapDescriptor.defaultMarker, 
               position: pApplePark)
           },

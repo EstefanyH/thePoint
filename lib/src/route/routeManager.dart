@@ -28,21 +28,21 @@ class RouteManager {
       case loadingPage:
         return MaterialPageRoute(builder: (context) => const SplashPage());
       case loginPage:
-        return MaterialPageRoute(builder: (context) => LoginPage());
+        return MaterialPageRoute(builder: (context) => const LoginPage());
       case sessionPage:
-        return MaterialPageRoute(builder: (context) => SessionPage());
+        return MaterialPageRoute(builder: (context) => const SessionPage());
       case phonePage:
-        return MaterialPageRoute(builder: (context) => PhonePage());
+        return MaterialPageRoute(builder: (context) => const PhonePage());
       case otpPage:
-        return MaterialPageRoute(builder: (context) => OtpPage());
+        return MaterialPageRoute(builder: (context) => const OtpPage());
       case racePage:
-        return MaterialPageRoute(builder: (context) => RacePage());
+        return MaterialPageRoute(builder: (context) => const RacePage());
       case mapPage:
-        return MaterialPageRoute(builder: (context) => MapPage());
+        return MaterialPageRoute(builder: (context) => const MapPage());
       case mainPage:
-        return MaterialPageRoute(builder: (context) => MainPage());
+        return MaterialPageRoute(builder: (context) => const MainPage());
       case lookingPage:
-        return MaterialPageRoute(builder: (context) => LookingPage());
+        return MaterialPageRoute(builder: (context) => const LookingPage());
       case registerPage:
         return MaterialPageRoute(builder: (context) => RegisterPage());
       default:

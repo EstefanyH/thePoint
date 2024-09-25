@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppProgressIndicator extends StatelessWidget {
-  const AppProgressIndicator({Key? key, this.text = ""}) : super(key: key);
+  const AppProgressIndicator({super.key, this.text = ""});
 
 final String text;
 

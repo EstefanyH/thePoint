@@ -24,8 +24,8 @@ class PhoneViewModel extends State<PhonePage> {
     final generatedCode = random.nextInt(10000).toString().padLeft(4, '0');
     setState(() {
       code = generatedCode;
-      print('Generate code: ${code}');
-      telephony.sendSms(to: "777", message: "Codigo de verificacion ${code}");
+      print('Generate code: $code');
+      telephony.sendSms(to: "777", message: "Codigo de verificacion $code");
       
     });
   }

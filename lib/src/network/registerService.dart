@@ -6,6 +6,7 @@ import 'package:thepointapp/src/models/request/fileRequest.dart';
 import 'package:thepointapp/src/network/iNetwork/iRegisterService.dart';
 import 'package:thepointapp/src/util/apiService.dart';
 import 'package:http/http.dart' as http;
+import 'package:thepointapp/src/util/constant.dart';
 
 
 class RegisterService extends IRegisterService with ChangeNotifier{
@@ -15,7 +16,7 @@ class RegisterService extends IRegisterService with ChangeNotifier{
   Future<dynamic> postFile(String filePath) async {
     // TODO: implement postFile
     try {
-      final request = http.MultipartRequest('POST',Uri.parse(API_POST_FILE+"?bucketName=s3-hache-backup&prefix=img"));
+      final request = http.MultipartRequest('POST',Uri.parse("$API_POST_FILE?bucketName=s3-hache-backup&prefix=${TypeBucket.img}"));
       request.files.add(await http.MultipartFile.fromPath('file', filePath) );
       
       final response = await request.send();

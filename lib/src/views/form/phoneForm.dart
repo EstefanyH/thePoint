@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:telephony/telephony.dart';
 import 'package:thepointapp/src/msic/style.dart';
 import 'package:thepointapp/src/viewModel/phoneViewModel.dart';
 

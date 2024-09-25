@@ -20,7 +20,7 @@ class MapViewModel extends State<MapPage> {
   }
 
   void goSelectionLocation(String ruta, String place) async {
-    print('Selection Location -> ${ruta}');
+    print('Selection Location -> $ruta');
     
     var result = await service.getLocation(place);
 

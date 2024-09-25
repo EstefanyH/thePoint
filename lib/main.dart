@@ -39,6 +39,8 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -53,7 +55,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     user = FirebaseAuth.instance.currentUser; 
     _firebaseMessaging.getToken().then((token){
-      print('Firebase token: ${token}');
+      print('Firebase token: $token');
     });
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {

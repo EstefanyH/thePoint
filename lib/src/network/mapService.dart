@@ -20,7 +20,7 @@ class MapService extends IMapService with ChangeNotifier {
       var data = json.decode(response.body);
        
       if (kDebugMode) {
-        print('request-> ${request}');
+        print('request-> $request');
         print(data);
       }
       if (response.statusCode == 200) {
@@ -43,7 +43,7 @@ class MapService extends IMapService with ChangeNotifier {
       var data = json.decode(response.body);
        
       if (kDebugMode) {
-        print('request-> ${request}');
+        print('request-> $request');
         print(data);
       }
       

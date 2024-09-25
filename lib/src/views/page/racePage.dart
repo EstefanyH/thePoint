@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thepointapp/src/models/request/raceRequest.dart';
 import 'package:thepointapp/src/views/form/raceForm.dart';
 
 class RacePage extends StatefulWidget {

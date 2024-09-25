@@ -1,8 +1,5 @@
-import 'dart:ffi';
 
-import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:thepointapp/src/msic/widget/dialog.dart';
 import 'package:thepointapp/src/util/constant.dart';
 
 class Permissions {

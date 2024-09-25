@@ -47,7 +47,7 @@ const errorBorder = UnderlineInputBorder(
 
 //Divisor
 class SizedBoxH10 extends StatelessWidget {
-  const SizedBoxH10({Key? key}) : super(key: key);
+  const SizedBoxH10({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class SizedBoxH10 extends StatelessWidget {
 }
 
 class SizedBoxH20 extends StatelessWidget {
-  const SizedBoxH20({Key? key}) : super(key: key);
+  const SizedBoxH20({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class SizedBoxH20 extends StatelessWidget {
 }
 
 class SizedBoxH30 extends StatelessWidget {
-  const SizedBoxH30({Key? key}) : super(key: key);
+  const SizedBoxH30({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class SizedBoxH30 extends StatelessWidget {
 }
 
 class SizedBoxH50 extends StatelessWidget {
-  const SizedBoxH50({Key? key}) : super(key: key);
+  const SizedBoxH50({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ class SizedBoxH50 extends StatelessWidget {
 }
 
 class Separator extends StatelessWidget {
-  const Separator({Key? key}) : super(key: key);
+  const Separator({super.key});
 
   @override
   Widget build(BuildContext context) {

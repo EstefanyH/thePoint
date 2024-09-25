@@ -11,3 +11,9 @@ final race = RaceRequest();
 const String GOOGLE_MAP_API_KEY = "AIzaSyDmDMlkXPcFL-Fco24_jwzhi1fx_40IJXQ";
 
 bool gb_isOrigin = false;
+
+enum TypeBucket {
+  img,
+  pdf,
+  s3_hache_backup
+}

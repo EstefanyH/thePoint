@@ -11,13 +11,13 @@ import 'package:thepointapp/src/views/page/lookingPage.dart';
 
 class LookingViewModel extends State<LookingPage> {
 
-  Location locationController = new Location();
+  Location locationController = Location();
   final Completer<GoogleMapController> mapController = Completer<GoogleMapController>();
 
   LatLng pGooglePlex = LatLng(race.originLocation.lat, race.originLocation.lng);
   LatLng pApplePark = LatLng(race.destinationLocation.lat, race.destinationLocation.lng);
   
-  LatLng? currentP = null;
+  LatLng? currentP;
 
   Map<PolylineId, Polyline> polylines = {};
 
@@ -27,19 +27,19 @@ class LookingViewModel extends State<LookingPage> {
 
   Future<void> cameraToPosition(LatLng pos) async {
     final GoogleMapController controller = await mapController.future;
-    CameraPosition _newCameraPosition = CameraPosition(
+    CameraPosition newCameraPosition = CameraPosition(
       target: pos, zoom: 13);
-      await controller.animateCamera(CameraUpdate.newCameraPosition(_newCameraPosition));
+      await controller.animateCamera(CameraUpdate.newCameraPosition(newCameraPosition));
   }
 
   Future<void> getLocationUpdates() async {
-    bool _serviceEnabled;
+    bool serviceEnabled;
     PermissionStatus permissionGranted;
     //Permissions.checkLocationPermission();
 
-    _serviceEnabled = await locationController.serviceEnabled();
-    if (_serviceEnabled) {
-      _serviceEnabled = await locationController.requestService();
+    serviceEnabled = await locationController.serviceEnabled();
+    if (serviceEnabled) {
+      serviceEnabled = await locationController.requestService();
     } else {
       return;
     }
@@ -66,7 +66,7 @@ class LookingViewModel extends State<LookingPage> {
     List<LatLng> polylineCoordinate = [];
     PolylinePoints polylinePoints = PolylinePoints();
     
-    PolylineRequest polylineRequest = new PolylineRequest(
+    PolylineRequest polylineRequest = PolylineRequest(
       origin: PointLatLng(pGooglePlex.latitude, pGooglePlex.longitude), 
       destination: PointLatLng(pApplePark.latitude, pApplePark.longitude), 
       mode: TravelMode.driving);
@@ -76,10 +76,10 @@ class LookingViewModel extends State<LookingPage> {
       request: polylineRequest, googleApiKey: GOOGLE_MAP_API_KEY
     );
 
-    if (!result.points.isEmpty){
-      result.points.forEach((PointLatLng point) {
+    if (result.points.isNotEmpty){
+      for (var point in result.points) {
         polylineCoordinate.add(LatLng(point.latitude, point.longitude));
-      });
+      }
     } else {
       print(result.errorMessage);
     }
@@ -87,7 +87,7 @@ class LookingViewModel extends State<LookingPage> {
   }
 
   void generatePolylineFromPoint(List<LatLng> polylineCoordinate) async { 
-    PolylineId id = PolylineId("poly");
+    PolylineId id = const PolylineId("poly");
     Polyline polyline = Polyline(
       polylineId: id, 
       color: Colors.blue, 

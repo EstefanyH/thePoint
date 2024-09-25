@@ -12,9 +12,9 @@ class MainViewModel extends State<MainPage> {
 
 
   List<Widget> widgetOptions = <Widget>[
-    RacePage(),
-    PromotionPage(),
-    ProfilePage(),
+    const RacePage(),
+    const PromotionPage(),
+    const ProfilePage(),
   ];
 
   void onItemTapped(int index) {
